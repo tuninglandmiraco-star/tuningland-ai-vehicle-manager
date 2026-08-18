@@ -1,0 +1,1210 @@
+css
+/**
+ * Tuningland AI Vehicle Manager
+ * Admin Styles
+ *
+ * Covers:
+ * - Vehicle CPT discovery
+ * - ACF field discovery
+ * - Semantic AI analysis
+ * - Web research
+ * - Sources / evidence
+ * - Candidates
+ * - Confidence
+ * - Review states
+ * - Responsive admin UI
+ */
+
+
+/* =========================================================
+   Base
+========================================================= */
+
+.tl-ai-vm-admin {
+	max-width: 1400px;
+	box-sizing: border-box;
+}
+
+.tl-ai-vm-admin *,
+.tl-ai-vm-admin *::before,
+.tl-ai-vm-admin *::after {
+	box-sizing: border-box;
+}
+
+.tl-ai-vm-admin h1 {
+	margin-bottom: 8px;
+}
+
+.tl-ai-vm-admin h2 {
+	margin-top: 0;
+}
+
+.tl-ai-vm-admin h3 {
+	margin-top: 0;
+}
+
+.tl-ai-vm-admin .description {
+	margin-bottom: 20px;
+	color: #646970;
+}
+
+.tl-ai-vm-admin code {
+	word-break: break-word;
+}
+
+
+/* =========================================================
+   Cards
+========================================================= */
+
+.tl-ai-vm-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 24px;
+	margin: 20px 0;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.tl-ai-vm-card h2 {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.tl-ai-vm-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.tl-ai-vm-card-header:last-child {
+	margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CPT Select
+========================================================= */
+
+.tl-ai-vm-select {
+	min-width: 320px;
+	height: 38px;
+	margin-right: 8px;
+}
+
+.tl-ai-vm-cpt-selector {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.tl-ai-vm-cpt-selector label {
+	font-weight: 600;
+}
+
+
+/* =========================================================
+   Statistics
+========================================================= */
+
+.tl-ai-vm-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+	margin: 20px 0;
+}
+
+.tl-ai-vm-stat {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 20px;
+	min-height: 80px;
+}
+
+.tl-ai-vm-stat-title {
+	display: block;
+	font-size: 13px;
+	color: #646970;
+	margin-bottom: 8px;
+}
+
+.tl-ai-vm-stat strong {
+	display: block;
+	font-size: 24px;
+	line-height: 1.3;
+}
+
+.tl-ai-vm-stat-value {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.tl-ai-vm-stat-description {
+	display: block;
+	margin-top: 6px;
+	font-size: 12px;
+	color: #646970;
+}
+
+
+/* =========================================================
+   Status
+========================================================= */
+
+.tl-ai-vm-status-success {
+	color: #008a20;
+}
+
+.tl-ai-vm-status-error {
+	color: #d63638;
+}
+
+.tl-ai-vm-status-warning {
+	color: #996800;
+}
+
+.tl-ai-vm-status-info {
+	color: #2271b1;
+}
+
+.tl-ai-vm-required {
+	color: #d63638;
+	font-weight: 600;
+}
+
+.tl-ai-vm-muted {
+	color: #646970;
+}
+
+.tl-ai-vm-status-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	padding: 4px 9px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.3;
+	white-space: nowrap;
+	background: #f0f0f1;
+	color: #646970;
+}
+
+.tl-ai-vm-status-badge.success {
+	background: #edfaef;
+	color: #008a20;
+}
+
+.tl-ai-vm-status-badge.warning {
+	background: #fff8e5;
+	color: #996800;
+}
+
+.tl-ai-vm-status-badge.error {
+	background: #fcf0f1;
+	color: #d63638;
+}
+
+.tl-ai-vm-status-badge.info {
+	background: #eef6fc;
+	color: #2271b1;
+}
+
+
+/* =========================================================
+   Notices
+========================================================= */
+
+.tl-ai-vm-notice {
+	background: #f6f7f7;
+	border-left: 4px solid #72aee6;
+	padding: 12px 16px;
+	margin-top: 16px;
+}
+
+.tl-ai-vm-notice-error {
+	border-left-color: #d63638;
+}
+
+.tl-ai-vm-notice-success {
+	border-left-color: #00a32a;
+}
+
+.tl-ai-vm-notice-warning {
+	border-left-color: #dba617;
+}
+
+.tl-ai-vm-notice p {
+	margin: 0.4em 0;
+}
+
+.tl-ai-vm-notice p:first-child {
+	margin-top: 0;
+}
+
+.tl-ai-vm-notice p:last-child {
+	margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Field Groups
+========================================================= */
+
+.tl-ai-vm-group {
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	margin-bottom: 18px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.tl-ai-vm-group-header {
+	background: #f6f7f7;
+	padding: 16px 18px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.tl-ai-vm-group-header h3 {
+	margin: 0 0 6px;
+	font-size: 16px;
+}
+
+.tl-ai-vm-group-header code {
+	font-size: 11px;
+	color: #646970;
+}
+
+.tl-ai-vm-group-header > span {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 20px;
+	padding: 5px 10px;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+
+/* =========================================================
+   Fields Table
+========================================================= */
+
+.tl-ai-vm-fields {
+	padding: 0;
+}
+
+.tl-ai-vm-fields-table {
+	width: 100%;
+	border: 0;
+	border-collapse: collapse;
+}
+
+.tl-ai-vm-fields-table th {
+	font-weight: 600;
+	background: #fff;
+}
+
+.tl-ai-vm-fields-table td,
+.tl-ai-vm-fields-table th {
+	vertical-align: middle;
+	padding: 12px 14px;
+	border-bottom: 1px solid #f0f0f1;
+	text-align: left;
+}
+
+.tl-ai-vm-fields-table tr:last-child td {
+	border-bottom: 0;
+}
+
+.tl-ai-vm-fields-table code {
+	font-size: 11px;
+}
+
+.tl-ai-vm-nested-row > td {
+	background: #fafafa;
+	padding: 15px 20px;
+}
+
+.tl-ai-vm-field-name {
+	font-weight: 600;
+}
+
+.tl-ai-vm-field-label {
+	display: block;
+	margin-bottom: 3px;
+}
+
+.tl-ai-vm-field-meta {
+	display: block;
+	font-size: 11px;
+	color: #646970;
+}
+
+
+/* =========================================================
+   AI Status
+========================================================= */
+
+.tl-ai-vm-ai-pending,
+.tl-ai-vm-ai-ready,
+.tl-ai-vm-ai-warning {
+	display: inline-block;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.tl-ai-vm-ai-pending {
+	background: #f0f0f1;
+	color: #646970;
+}
+
+.tl-ai-vm-ai-ready {
+	background: #edfaef;
+	color: #008a20;
+}
+
+.tl-ai-vm-ai-warning {
+	background: #fff8e5;
+	color: #996800;
+}
+
+
+/* =========================================================
+   Semantic Field Analysis
+========================================================= */
+
+.tl-ai-vm-semantic {
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	background: #fff;
+	padding: 16px;
+	margin-top: 12px;
+}
+
+.tl-ai-vm-semantic-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.tl-ai-vm-semantic-item {
+	padding: 12px;
+	background: #f6f7f7;
+	border-radius: 6px;
+}
+
+.tl-ai-vm-semantic-label {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	color: #646970;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
+.tl-ai-vm-semantic-value {
+	display: block;
+	font-size: 13px;
+	color: #1d2327;
+}
+
+
+/* =========================================================
+   Research
+========================================================= */
+
+.tl-ai-vm-research {
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	background: #fff;
+	overflow: hidden;
+	margin: 20px 0;
+}
+
+.tl-ai-vm-research-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 16px 20px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.tl-ai-vm-research-header h3 {
+	margin: 0;
+}
+
+.tl-ai-vm-research-body {
+	padding: 20px;
+}
+
+.tl-ai-vm-research-query {
+	padding: 10px 12px;
+	margin: 8px 0;
+	background: #f6f7f7;
+	border: 1px solid #e2e4e7;
+	border-radius: 5px;
+	font-family: monospace;
+	font-size: 12px;
+	word-break: break-word;
+}
+
+.tl-ai-vm-research-query:last-child {
+	margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Research Task Status
+========================================================= */
+
+.tl-ai-vm-task-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 5px 9px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 600;
+	background: #f0f0f1;
+	color: #646970;
+}
+
+.tl-ai-vm-task-status.pending {
+	background: #f0f0f1;
+	color: #646970;
+}
+
+.tl-ai-vm-task-status.researching {
+	background: #eef6fc;
+	color: #2271b1;
+}
+
+.tl-ai-vm-task-status.analyzing {
+	background: #f0edff;
+	color: #5057a6;
+}
+
+.tl-ai-vm-task-status.completed {
+	background: #edfaef;
+	color: #008a20;
+}
+
+.tl-ai-vm-task-status.failed {
+	background: #fcf0f1;
+	color: #d63638;
+}
+
+.tl-ai-vm-task-status.review {
+	background: #fff8e5;
+	color: #996800;
+}
+
+
+/* =========================================================
+   Sources
+========================================================= */
+
+.tl-ai-vm-sources {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.tl-ai-vm-source {
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	padding: 14px;
+	background: #fff;
+}
+
+.tl-ai-vm-source-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 15px;
+}
+
+.tl-ai-vm-source-title {
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.tl-ai-vm-source-domain {
+	font-size: 11px;
+	color: #646970;
+}
+
+.tl-ai-vm-source-url {
+	display: block;
+	margin-top: 7px;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.tl-ai-vm-source-snippet {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #f0f0f1;
+	color: #50575e;
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+
+/* =========================================================
+   Candidates
+========================================================= */
+
+.tl-ai-vm-candidates {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.tl-ai-vm-candidate {
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	padding: 14px;
+	background: #fff;
+}
+
+.tl-ai-vm-candidate-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	margin-bottom: 8px;
+}
+
+.tl-ai-vm-candidate-value {
+	font-size: 16px;
+	font-weight: 600;
+	word-break: break-word;
+}
+
+.tl-ai-vm-candidate-meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+	font-size: 11px;
+	color: #646970;
+}
+
+.tl-ai-vm-candidate-notes {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #f0f0f1;
+	font-size: 12px;
+	color: #50575e;
+}
+
+
+/* =========================================================
+   Confidence
+========================================================= */
+
+.tl-ai-vm-confidence {
+	min-width: 130px;
+}
+
+.tl-ai-vm-confidence-bar {
+	height: 7px;
+	background: #f0f0f1;
+	border-radius: 999px;
+	overflow: hidden;
+}
+
+.tl-ai-vm-confidence-fill {
+	display: block;
+	height: 100%;
+	width: 0;
+	background: currentColor;
+	border-radius: inherit;
+	transition: width 0.2s ease;
+}
+
+.tl-ai-vm-confidence-label {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 5px;
+	font-size: 11px;
+	color: #646970;
+}
+
+.tl-ai-vm-confidence-high {
+	color: #008a20;
+}
+
+.tl-ai-vm-confidence-medium {
+	color: #996800;
+}
+
+.tl-ai-vm-confidence-low {
+	color: #d63638;
+}
+
+
+/* =========================================================
+   Evidence
+========================================================= */
+
+.tl-ai-vm-evidence {
+	margin-top: 12px;
+	padding: 12px 14px;
+	border-left: 3px solid #72aee6;
+	background: #f6f7f7;
+	font-size: 12px;
+	line-height: 1.7;
+	color: #50575e;
+}
+
+.tl-ai-vm-evidence-label {
+	display: block;
+	font-weight: 600;
+	color: #1d2327;
+	margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   Review
+========================================================= */
+
+.tl-ai-vm-review {
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	background: #fff;
+	padding: 18px;
+}
+
+.tl-ai-vm-review-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.tl-ai-vm-review-actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.tl-ai-vm-review-warning {
+	border-left: 4px solid #dba617;
+	background: #fff8e5;
+	padding: 12px 15px;
+	margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   Research Result
+========================================================= */
+
+.tl-ai-vm-result {
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.tl-ai-vm-result-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	padding: 15px 18px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.tl-ai-vm-result-header h3 {
+	margin: 0;
+}
+
+.tl-ai-vm-result-body {
+	padding: 18px;
+}
+
+.tl-ai-vm-result-value {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.tl-ai-vm-result-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 15px;
+	font-size: 12px;
+	color: #646970;
+}
+
+
+/* =========================================================
+   Roadmap
+========================================================= */
+
+.tl-ai-vm-roadmap {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tl-ai-vm-roadmap li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 9px 0;
+	border-bottom: 1px solid #f0f0f1;
+	color: #646970;
+}
+
+.tl-ai-vm-roadmap li:last-child {
+	border-bottom: 0;
+}
+
+.tl-ai-vm-roadmap li span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	font-weight: 600;
+}
+
+.tl-ai-vm-roadmap li.done {
+	color: #008a20;
+}
+
+.tl-ai-vm-roadmap li.done span {
+	color: #008a20;
+}
+
+
+/* =========================================================
+   Empty State
+========================================================= */
+
+.tl-ai-vm-empty {
+	padding: 35px 20px;
+	text-align: center;
+	color: #646970;
+	border: 1px dashed #c3c4c7;
+	border-radius: 8px;
+	background: #fafafa;
+}
+
+.tl-ai-vm-empty strong {
+	display: block;
+	color: #1d2327;
+	margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   Loading State
+========================================================= */
+
+.tl-ai-vm-loading {
+	position: relative;
+	opacity: 0.65;
+	pointer-events: none;
+}
+
+.tl-ai-vm-spinner {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #dcdcde;
+	border-top-color: #2271b1;
+	border-radius: 50%;
+	animation: tl-ai-vm-spin 0.7s linear infinite;
+	vertical-align: middle;
+}
+
+@keyframes tl-ai-vm-spin {
+
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+
+}
+
+
+/* =========================================================
+   Buttons
+========================================================= */
+
+.tl-ai-vm-admin .button {
+	min-height: 36px;
+}
+
+.tl-ai-vm-admin .button-primary {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.tl-ai-vm-button-group {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+
+/* =========================================================
+   Tables
+========================================================= */
+
+.tl-ai-vm-admin .widefat {
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.tl-ai-vm-admin .widefat th {
+	font-weight: 600;
+}
+
+.tl-ai-vm-admin .widefat td,
+.tl-ai-vm-admin .widefat th {
+	vertical-align: middle;
+}
+
+
+/* =========================================================
+   Utility
+========================================================= */
+
+.tl-ai-vm-flex {
+	display: flex;
+}
+
+.tl-ai-vm-flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+}
+
+.tl-ai-vm-flex-wrap {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.tl-ai-vm-mt-0 {
+	margin-top: 0 !important;
+}
+
+.tl-ai-vm-mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.tl-ai-vm-text-small {
+	font-size: 12px;
+}
+
+.tl-ai-vm-text-center {
+	text-align: center;
+}
+
+.tl-ai-vm-break {
+	word-break: break-word;
+}
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media screen and (max-width: 1100px) {
+
+	.tl-ai-vm-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.tl-ai-vm-semantic-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.tl-ai-vm-source-header,
+	.tl-ai-vm-candidate-header,
+	.tl-ai-vm-review-header,
+	.tl-ai-vm-result-header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+}
+
+
+@media screen and (max-width: 782px) {
+
+	.tl-ai-vm-admin {
+		max-width: 100%;
+	}
+
+	.tl-ai-vm-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.tl-ai-vm-card {
+		padding: 16px;
+	}
+
+	.tl-ai-vm-card-header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.tl-ai-vm-select {
+		min-width: 100%;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+
+	.tl-ai-vm-cpt-selector {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.tl-ai-vm-group-header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.tl-ai-vm-fields-table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	.tl-ai-vm-research-header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.tl-ai-vm-review-actions {
+		width: 100%;
+	}
+
+	.tl-ai-vm-review-actions .button {
+		flex: 1 1 auto;
+	}
+
+	.tl-ai-vm-semantic-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.tl-ai-vm-confidence {
+		width: 100%;
+	}
+
+}
+
+
+/* =========================================================
+   Research Approval
+========================================================= */
+
+.tl-ai-vm-approval-summary {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.tl-ai-vm-approval-table {
+	margin-top: 10px;
+}
+
+.tl-ai-vm-approval-table th,
+.tl-ai-vm-approval-table td {
+	vertical-align: middle;
+}
+
+.tl-ai-vm-approval-table code {
+	font-size: 11px;
+}
+
+.tl-ai-vm-approval-table .button {
+	margin: 2px 0;
+}
+
+@media screen and (max-width: 782px) {
+	.tl-ai-vm-approval-summary {
+		width: 100%;
+	}
+
+	.tl-ai-vm-approval-table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+}
+
+/* =========================================================
+   Vehicle Research Runner
+========================================================= */
+.tl-ai-vm-research-launcher { border-left: 4px solid #2271b1; }
+.tl-ai-vm-research-form { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.tl-ai-vm-research-form .tl-ai-vm-select { min-width:420px; margin:0; }
+.tl-ai-vm-checkbox { display:inline-flex; align-items:center; gap:6px; color:#50575e; }
+.tl-ai-vm-checkbox input { margin:0; }
+.tl-ai-vm-research-launcher .description { max-width:900px; }
+@media screen and (max-width:782px) {
+    .tl-ai-vm-research-form { align-items:stretch; flex-direction:column; }
+    .tl-ai-vm-research-form .tl-ai-vm-select { min-width:100%; width:100%; }
+}
+
+/* =========================================================
+   Async Research Progress
+========================================================= */
+
+.tl-ai-vm-progress-wrap { margin-top: 14px; }
+.tl-ai-vm-progress-bar { height: 10px; background: #dcdcde; border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
+.tl-ai-vm-progress-bar span { display: block; width: 0; height: 100%; background: #2271b1; transition: width .35s ease; }
+.tl-ai-vm-progress-text { font-weight: 600; margin-bottom: 4px; }
+.tl-ai-vm-progress-stage, .tl-ai-vm-progress-stats { color: #646970; font-size: 12px; margin-top: 3px; }
+.tl-ai-vm-progress-errors { display: none; color: #b32d2e; font-size: 12px; line-height: 1.5; margin-top: 8px; }
+
+/* =========================================================
+   Research Group Selection / Async Research
+========================================================= */
+.tl-ai-vm-research-groups {
+	margin: 16px 0;
+	padding: 14px 16px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+}
+.tl-ai-vm-research-groups > strong {
+	display: block;
+	margin-bottom: 4px;
+}
+.tl-ai-vm-group-toggle {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 10px;
+	margin-top: 6px;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.tl-ai-vm-group-toggle small {
+	margin-left: auto;
+	color: #646970;
+}
+.tl-ai-vm-research-controls {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+.tl-ai-vm-research-box .tl-ai-vm-progress-wrap {
+	margin-top: 14px;
+	padding: 14px;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	background: #fff;
+}
+.tl-ai-vm-progress-bar {
+	height: 10px;
+	background: #e5e5e5;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.tl-ai-vm-progress-bar span {
+	display: block;
+	height: 100%;
+	width: 0;
+	transition: width .35s ease;
+}
+.tl-ai-vm-progress-text {
+	margin-top: 10px;
+	font-weight: 600;
+}
+.tl-ai-vm-progress-stage,
+.tl-ai-vm-progress-stats {
+	margin-top: 5px;
+	color: #646970;
+	font-size: 12px;
+}
+.tl-ai-vm-progress-errors {
+	display: none;
+	margin-top: 10px;
+	padding: 8px 10px;
+	border-left: 3px solid #d63638;
+	background: #fff5f5;
+	color: #8a1f1f;
+}
+
+.tl-ai-vm-research-groups { margin-bottom: 10px; }
+.tl-ai-vm-group-toggle { display:flex; align-items:center; gap:7px; padding:6px 0; font-size:12px; }
+.tl-ai-vm-group-toggle small { margin-left:auto; color:#646970; }
+.tl-ai-vm-research-results { margin-top:12px; }
+.tl-ai-vm-research-results h4 { margin:12px 0 8px; }
+.tl-ai-vm-result-card { border:1px solid #dcdcde; background:#fff; padding:9px; margin:7px 0; border-radius:5px; }
+.tl-ai-vm-result-value { font-size:15px; font-weight:600; margin:4px 0; word-break:break-word; }
+.tl-ai-vm-result-card small { color:#646970; }
+.tl-ai-vm-result-card details { margin-top:6px; }
+.tl-ai-vm-result-card ul { margin:5px 0 0 16px; }
+
+
+/* =========================================================
+   Live Research Results / Approval
+========================================================= */
+.tl-ai-vm-live-results { margin-top:18px; }
+.tl-ai-vm-live-results-inner { background:#fff; border:1px solid #dcdcde; border-radius:8px; padding:16px; }
+.tl-ai-vm-live-results-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+.tl-ai-vm-results-table-wrap { overflow-x:auto; }
+.tl-ai-vm-results-table th, .tl-ai-vm-results-table td { vertical-align:middle; padding:10px 12px; }
+.tl-ai-vm-results-table td strong { word-break:break-word; }
+.tl-ai-vm-status-success { color:#008a20; font-weight:600; }
+@media screen and (max-width:782px){ .tl-ai-vm-live-results-head{align-items:flex-start;flex-direction:column;} }
+
+
+/* v7.7.1: keep research groups vertically stacked even when another admin
+ * stylesheet overrides label/display rules. */
+.tl-ai-vm-research-groups {
+	display: block !important;
+	width: 100%;
+	box-sizing: border-box;
+}
+.tl-ai-vm-research-groups .tl-ai-vm-group-toggle {
+	display: flex !important;
+	width: 100% !important;
+	box-sizing: border-box;
+	float: none !important;
+	clear: both;
+}
+.tl-ai-vm-live-activity{margin-top:12px}.tl-ai-vm-live-activity-inner{border:1px solid #dcdcde;border-radius:6px;background:#fff;padding:12px}.tl-ai-vm-live-activity-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.tl-ai-vm-live-activity-title span{font-size:11px;background:#f0f0f1;padding:3px 7px;border-radius:10px}.tl-ai-vm-active-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.tl-ai-vm-research-lane{border:1px solid #dcdcde;border-radius:5px;padding:8px;min-height:92px;background:#f6f7f7}.tl-ai-vm-research-lane.active{border-color:#72aee6;background:#f0f6fc}.tl-ai-vm-research-lane.done{border-color:#68a45b;background:#f2f9f0}.tl-ai-vm-lane-head{display:flex;gap:5px;align-items:center;font-size:12px}.tl-ai-vm-lane-number{width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#2271b1;color:#fff;font-size:11px}.tl-ai-vm-lane-status{margin-left:auto;font-size:10px;color:#646970}.tl-ai-vm-lane-stage{font-size:11px;color:#50575e;margin-top:7px;line-height:1.5}.tl-ai-vm-lane-value{font-size:11px;margin-top:5px}.tl-ai-vm-lane-sources{font-size:10px;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tl-ai-vm-research-details{margin-top:8px;font-size:12px}.tl-ai-vm-research-details ul{margin:6px 0 0 18px}.tl-ai-vm-research-details li{margin:3px 0}@media(max-width:1000px){.tl-ai-vm-active-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.tl-ai-vm-active-grid{grid-template-columns:1fr}}
